@@ -1,6 +1,7 @@
 const fontColors = {
   primary: "#fff",
-  secondary: "#3C4A6B"
+  secondary: "#3C4A6B",
+  hover: "#3C4A6B"
 }
 
 const fontSize = {
