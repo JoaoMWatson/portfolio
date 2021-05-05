@@ -7,7 +7,9 @@ const fontSize = {
   title: {
     primary: '3.5rem',
     secondary: '2.625rem',
-  } 
+  },
+  primary: '2.5rem',
+  secondary:'1.5rem'
 }
 
 const breakpoints = {
