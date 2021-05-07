@@ -15,6 +15,7 @@ const CardContainer = styled.div`
   box-shadow: 0px 0px 20px 3px #1a54ab;
   border-radius: 20px;
   padding: 2%;
+  overflow-y: scroll;
 `;
 
 const Title = styled.h2`
@@ -35,6 +36,18 @@ const List = styled.ul`
 const Item = styled.li`
   font-size: ${fontSize.secondary};
   margin-top: 15px;
+  line-height:2rem;
+
+b{
+  font-weight:bold;
+  line-height:1.5rem;
+}
+p{
+  margin-left:20px;
+  line-height:1.5rem;
+  margin-bottom:10px
+}
+
 `;
 
 const NavBar = styled.div`
