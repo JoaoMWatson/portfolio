@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Slider from "react-slick";
 import {
   CardContainer,
   Title,
@@ -10,37 +11,83 @@ import {
 } from "./style.js";
 
 function Card() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <>
       <NavBar>
         <NavItem isSelect as="a" href="#">
-          Sobre
+          About
         </NavItem>
         <NavItem as="a" href="#">
-          Conhecimentos
+          Knowledge
         </NavItem>
         <NavItem as="a" href="#">
-          Interesses
+          Interest
         </NavItem>
         <NavItem as="a" href="#">
-          Experiencias
+          Experiences
         </NavItem>
       </NavBar>
-      <Container>
-        <CardContainer>
-          <Title>Interest</Title>
-          <List>
-            <Item> - Bla blaBla s</Item>
-            <Item> - xaxael</Item>
-            <Item> - ahduashd</Item>
-            <Item> - Blabaaaaaaa</Item>
-            <Item> - Bla blablalbla</Item>
-            <Item> - Bla blablalbla</Item>
-            <Item> - Bla blablalbla</Item>
-            <Item> - Bla blablalbla</Item>
-          </List>
-        </CardContainer>
-      </Container>
+      <Slider {...settings}>
+        <li>
+          <Container>
+            <CardContainer>
+              <Title>Interest</Title>
+              <List>
+                <Item> - Bla blaBla s</Item>
+                <Item> - xaxael</Item>
+                <Item> - ahduashd</Item>
+                <Item> - Blabaaaaaaa</Item>
+                <Item> - Bla blablalbla</Item>
+                <Item> - Bla blablalbla</Item>
+                <Item> - Bla blablalbla</Item>
+                <Item> - Bla blablalbla</Item>
+              </List>
+            </CardContainer>
+          </Container>
+          </li>
+          <li>
+          <Container>
+            <CardContainer>
+              <Title>Interest</Title>
+              <List>
+                <Item> - Bla blaBla s</Item>
+                <Item> - xaxael</Item>
+                <Item> - ahduashd</Item>
+                <Item> - Blabaaaaaaa</Item>
+                <Item> - Bla blablalbla</Item>
+                <Item> - Bla blablalbla</Item>
+                <Item> - Bla blablalbla</Item>
+                <Item> - Bla blablalbla</Item>
+              </List>
+            </CardContainer>
+          </Container>
+          </li>
+          <li>
+          <Container>
+            <CardContainer>
+              <Title>Interest</Title>
+              <List>
+                <Item> - Bla blaBla s</Item>
+                <Item> - xaxael</Item>
+                <Item> - ahduashd</Item>
+                <Item> - Blabaaaaaaa</Item>
+                <Item> - Bla blablalbla</Item>
+                <Item> - Bla blablalbla</Item>
+                <Item> - Bla blablalbla</Item>
+                <Item> - Bla blablalbla</Item>
+              </List>
+            </CardContainer>
+          </Container>
+          </li>
+        </Slider>
     </>
   );
 }
