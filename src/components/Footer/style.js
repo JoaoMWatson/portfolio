@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {fontColors} from "../../globalStyle.js"
+import { fontColors } from "../../globalStyle.js";
 
 const Container = styled.footer`
   width: 100vw;
@@ -10,15 +10,20 @@ const Container = styled.footer`
   align-items: center;
   align-content: space-between;
 
-  svg{ 
-    width:90px;
-    margin:2%;
-    color: ${fontColors.primary};
-    transition:0.5ms;
+  svg {
+    
   }
 
-  svg:hover{
+  svg:hover {
     color: ${fontColors.hover};
+  }
+
+  a {
+    text-decoration: none;
+    width: 90px;
+    margin: 2%;
+    color: ${fontColors.primary};
+    transition: 0.5ms;
   }
 `;
 
