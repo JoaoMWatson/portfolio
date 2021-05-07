@@ -12,6 +12,7 @@ import {
 
 function Card() {
   const settings = {
+    arrows:true,
     dots: true,
     infinite: true,
     speed: 500,
@@ -61,24 +62,18 @@ function Card() {
               <List>
                 <Item>
                   <b>Backend:</b>
-                </Item>
-                <Item>
                   <p>- Python(Flask, Django, Scipy, Pandas, Matplotlib)</p>
                   <p>- C#(.NetCore, .AspNet, EntityFramework)</p>
                   <p>- PHP(Lumen, Laravel)</p>
                 </Item>
                 <Item>
                   <b>Frontend:</b>
-                </Item>
-                <Item>
                   <p>- HTML</p>
                   <p>- CSS</p>
                   <p>- Javascript(ReactJS, Vanilla JS)</p>
                 </Item>
                 <Item>
                   <b>Database:</b>
-                </Item>
-                <Item>
                   <p>
                     - Relacional(MySQL/MariaBD, SQLServer, Oracle, Postegres, SQLite)
                   </p>
@@ -88,8 +83,6 @@ function Card() {
                 </Item>
                 <Item>
                   <b>Misc:</b>
-                </Item>
-                <Item>
                   <p>
                     - Git
                   </p>

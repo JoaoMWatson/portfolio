@@ -3,8 +3,11 @@ import { fontColors, fontSize } from "../../globalStyle.js";
 
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  height: 600px;
+  align-content: center;
+  align-items: center;
 `;
 
 const CardContainer = styled.div`
@@ -15,7 +18,7 @@ const CardContainer = styled.div`
   box-shadow: 0px 0px 20px 3px #1a54ab;
   border-radius: 20px;
   padding: 2%;
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 
 const Title = styled.h2`
@@ -41,6 +44,7 @@ const Item = styled.li`
 b{
   font-weight:bold;
   line-height:1.5rem;
+  padding-bottom:10px;
 }
 p{
   margin-left:20px;
