@@ -11,6 +11,53 @@ import {
 } from "./style.js";
 
 function Card() {
+  const [sobre, setSobre] = useState(true);
+  const [conhecimento, setConhecimento] = useState(false);
+  const [experiencia, setExperiencia] = useState(false);
+  const [curiosidade, setCuriosidade] = useState(false);
+  const [slider, setSlider] = useState();
+  const [indexSlider, setIndexSlider] = useState(0);
+
+  const after = (index) => {
+    if (isNaN(index)) {
+      index = 1;
+    }
+    if (index === 4) {
+      index = 0;
+    }
+    switch (index) {
+      case 0:
+        setSobre(true);
+        setConhecimento(false);
+        setExperiencia(false);
+        setCuriosidade(false);
+        break;
+      case 1:
+        setSobre(false);
+        setConhecimento(true);
+        setExperiencia(false);
+        setCuriosidade(false);
+        break;
+      case 2:
+        setSobre(false);
+        setConhecimento(false);
+        setExperiencia(true);
+        setCuriosidade(false);
+        break;
+      case 3:
+        setSobre(false);
+        setConhecimento(false);
+        setExperiencia(false);
+        setCuriosidade(true);
+        break;
+      default:
+        setSobre(true);
+        setConhecimento(false);
+        setExperiencia(false);
+        setCuriosidade(false);
+    }
+  };
+
   const settings = {
     arrows: true,
     dots: true,
@@ -18,36 +65,61 @@ function Card() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    afterChange: () => after(indexSlider.slideIndex + 1),
+    beforeChange: (current, next) => {
+      setIndexSlider({ slideIndex: next });
+    },
   };
-
-  const [select, setSelect] = useState([true, false, false, false]);
-  const [slider, setSlider] = useState();
 
   return (
     <>
       <NavBar>
         <NavItem
-          onClick={() => {setSelect([true, false, false, false]); slider.slickGoTo(0)}}
-          isSelect={select[0]}
-          slick
+          onClick={() => {
+            setSobre(true);
+            setConhecimento(false);
+            setExperiencia(false);
+            setCuriosidade(false);
+            slider.slickGoTo(0);
+          }}
+          isSelect={sobre}
         >
           Sobre
         </NavItem>
         <NavItem
-          onClick={() => {setSelect([false, true, false, false]); slider.slickGoTo(1)}}
-          isSelect={select[1]}
+          onClick={() => {
+            setSobre(false);
+            setConhecimento(true);
+            setExperiencia(false);
+            setCuriosidade(false);
+            slider.slickGoTo(1);
+          }}
+          isSelect={conhecimento}
         >
           Conhecimentos
         </NavItem>
         <NavItem
-          onClick={() => {setSelect([false, false, true, false]); slider.slickGoTo(2)}}
-          isSelect={select[2]}
+          onClick={() => {
+            setSobre(false);
+            setConhecimento(false);
+            setExperiencia(true);
+            setCuriosidade(false);
+            slider.slickGoTo(2);
+          }}
+          isSelect={experiencia}
         >
-          Experiencias
+          Experiências
         </NavItem>
         <NavItem
-          onClick={() => {setSelect([false, false, false, true]); slider.slickGoTo(3)}}
-          isSelect={select[3]}
+          onClick={() => {
+            setSobre(false);
+            setConhecimento(false);
+            setExperiencia(false);
+            setCuriosidade(true);
+
+            slider.slickGoTo(3);
+          }}
+          isSelect={curiosidade}
         >
           Curiosidades
         </NavItem>
@@ -60,7 +132,7 @@ function Card() {
               <List>
                 <Item as="p">
                   Formado em Desenvolvimento de Sistemas pela ETEC Irmã
-                  Agostina, estudante de Ciências da Computação e amante de
+                  Agostina, estudante de Ciência da Computação e amante de
                   tecnologia. Focado em Desenvolvimento backend e data science
                   com um pé em Frontend. Atualmente atuo com C#, Python, e
                   Javascript utilizando tecnologias como .NetCore, Flask,
@@ -71,7 +143,7 @@ function Card() {
             </CardContainer>
           </Container>
         </li>
-        <li >
+        <li>
           <Container>
             <CardContainer>
               <Title>Conhecimentos</Title>
@@ -110,7 +182,7 @@ function Card() {
         <li>
           <Container>
             <CardContainer>
-              <Title>Experiencias</Title>
+              <Title>Experiências</Title>
               <List>
                 <Item>
                   <b>Desenvolvedor Fullstack na Fiscosys</b>
@@ -149,21 +221,25 @@ function Card() {
             <CardContainer>
               <Title>Curiosidades</Title>
               <List>
-                <Item> &middot; Nascido, criado e morando em São Paulo - SP</Item>
+                <Item>
+                  {" "}
+                  &middot; Nascido, criado e morando em São Paulo - SP
+                </Item>
                 <Item> &middot; Pronomes: [Ele/dele/he/him]</Item>
                 <Item> &middot; Amante de podcasts</Item>
                 <Item>
                   {" "}
-                  &middot; Tenho 3 gatas, todas com nomes de personagens de Legend of
-                  Zelda(Zelda, Midna, Mipha), minha casa é quase Hyrule
+                  &middot; Tenho 3 gatas, todas com nomes de personagens de
+                  Legend of Zelda(Zelda, Midna, Mipha), minha casa é quase
+                  Hyrule
                 </Item>
                 <Item> &middot; Jogador de lol(nick: To entediado #br1)</Item>
                 <Item> &middot; Violinista</Item>
                 <Item> &middot; Aspirante a masterchef</Item>
                 <Item>
                   {" "}
-                  &middot; Comecei a estudar programação com 13 anos mas parei até
-                  voltar aos 17
+                  &middot; Comecei a estudar programação com 13 anos mas parei
+                  até voltar aos 17
                 </Item>
               </List>
             </CardContainer>
