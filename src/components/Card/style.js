@@ -11,7 +11,7 @@ const Container = styled.div`
 `;
 
 const CardContainer = styled.div`
-  width: 1098px;
+  width: 980px;
   height: 547px;
   background-color: #1095e0;
   border: 3px solid rgba(255, 255, 255, 0.87);
@@ -60,6 +60,8 @@ const NavBar = styled.div`
   align-items: center;
   align-content: center;
   justify-content: center;
+  margin-top:10px;
+  cursor:pointer; 
 
   a {
     text-decoration: none;

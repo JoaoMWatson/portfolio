@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import {
   CardContainer,
@@ -12,7 +12,7 @@ import {
 
 function Card() {
   const settings = {
-    arrows:true,
+    arrows: true,
     dots: true,
     infinite: true,
     speed: 500,
@@ -20,27 +20,42 @@ function Card() {
     slidesToScroll: 1,
   };
 
+  const [select, setSelect] = useState([true, false, false, false]);
+  const [slider, setSlider] = useState();
+
   return (
     <>
       <NavBar>
-        <NavItem isSelect as="a" href="#">
-          About
+        <NavItem
+          onClick={() => setSelect([true, false, false, false])}
+          isSelect={select[0]}
+        >
+          Sobre
         </NavItem>
-        <NavItem as="a" href="#">
-          Knowledge
+        <NavItem
+          onClick={() => setSelect([false, true, false, false])}
+          isSelect={select[1]}
+        >
+          Conhecimentos
         </NavItem>
-        <NavItem as="a" href="#">
-          Experiences
+        <NavItem
+          onClick={() => setSelect([false, false, true, false])}
+          isSelect={select[2]}
+        >
+          Experiencias
         </NavItem>
-        <NavItem as="a" href="#">
-          Interest
+        <NavItem
+          onClick={() => setSelect([false, false, false, true])}
+          isSelect={select[3]}
+        >
+          Curiosidades
         </NavItem>
       </NavBar>
-      <Slider {...settings}>
+      <Slider ref={(slider) => setSlider(slider)} {...settings}>
         <li>
           <Container>
             <CardContainer>
-              <Title>About</Title>
+              <Title>Sobre </Title>
               <List>
                 <Item as="p">
                   Formado em Desenvolvimento de Sistemas pela ETEC Irmã
@@ -55,10 +70,10 @@ function Card() {
             </CardContainer>
           </Container>
         </li>
-        <li>
+        <li >
           <Container>
             <CardContainer>
-              <Title>Knowledge</Title>
+              <Title>Conhecimentos</Title>
               <List>
                 <Item>
                   <b>Backend:</b>
@@ -75,25 +90,53 @@ function Card() {
                 <Item>
                   <b>Database:</b>
                   <p>
-                    - Relacional(MySQL/MariaBD, SQLServer, Oracle, Postegres, SQLite)
+                    - Relacional(MySQL/MariaBD, SQLServer, Oracle, Postegres,
+                    SQLite)
                   </p>
-                  <p>
-                    - Não relacional(Firebase, MongoBD)
-                  </p>
+                  <p>- Não relacional(Firebase, MongoBD)</p>
                 </Item>
                 <Item>
                   <b>Misc:</b>
+                  <p>- Git</p>
+                  <p>- Microsoft azure</p>
+                  <p>- Heroku</p>
+                  <p>- AWS</p>
+                </Item>
+              </List>
+            </CardContainer>
+          </Container>
+        </li>
+        <li>
+          <Container>
+            <CardContainer>
+              <Title>Experiencias</Title>
+              <List>
+                <Item>
+                  <b>Desenvolvedor Fullstack na Fiscosys</b>
+                </Item>
+                <b>Período do emprego ago. de 2020 – o momento</b>
+                <Item></Item>
+                <Item>
                   <p>
-                    - Git
+                    - Atuando na criação e implementação de interfaces para
+                    usuário final
                   </p>
+                  <p>- Desenvolvimento de APIs REST com alto fluxo de dados</p>
+                  <p>- Manutenção de código legado</p>
+                  <p>- Refatoração com foco em melhoria de desempenho</p>
+                </Item>
+                <Item>
+                  <b>Analista técnico na Visomes</b>
+                </Item>
+                <b>Maio de 2019 – Maio de 2020, Duração: 1 ano 1 mês</b>
+                <Item></Item>
+                <Item>
+                  <p>- Helpdesk</p>
+                  <p>- Participação em projetos de desenvolvimento</p>
+                  <p>- Manutenção de código legado</p>
                   <p>
-                    - Microsoft azure
-                  </p>
-                  <p>
-                    - Heroku
-                  </p>
-                  <p>
-                    - AWS
+                    - Criação de planilhas utilizando técnicas de data science e
+                    web scrapping
                   </p>
                 </Item>
               </List>
@@ -103,33 +146,24 @@ function Card() {
         <li>
           <Container>
             <CardContainer>
-              <Title>Experiences</Title>
+              <Title>Curiosidades</Title>
               <List>
-                <Item> - Bla blaBla s</Item>
-                <Item> - xaxael</Item>
-                <Item> - ahduashd</Item>
-                <Item> - Blabaaaaaaa</Item>
-                <Item> - Bla blablalbla</Item>
-                <Item> - Bla blablalbla</Item>
-                <Item> - Bla blablalbla</Item>
-                <Item> - Bla blablalbla</Item>
-              </List>
-            </CardContainer>
-          </Container>
-        </li>
-        <li>
-          <Container>
-            <CardContainer>
-              <Title>Interest</Title>
-              <List>
-                <Item> - Bla blaBla s</Item>
-                <Item> - xaxael</Item>
-                <Item> - ahduashd</Item>
-                <Item> - Blabaaaaaaa</Item>
-                <Item> - Bla blablalbla</Item>
-                <Item> - Bla blablalbla</Item>
-                <Item> - Bla blablalbla</Item>
-                <Item> - Bla blablalbla</Item>
+                <Item> &middot; Nascido, criado e morando em São Paulo - SP</Item>
+                <Item> &middot; Pronomes: [Ele/dele/he/him]</Item>
+                <Item> &middot; Amante de podcasts</Item>
+                <Item>
+                  {" "}
+                  &middot; Tenho 3 gatas, todas com nomes de personagens de Legend of
+                  Zelda(Zelda, Midna, Mipha), minha casa é quase Hyrule
+                </Item>
+                <Item> &middot; Jogador de lol(nick: To entediado #br1)</Item>
+                <Item> &middot; Violinista</Item>
+                <Item> &middot; Aspirante a masterchef</Item>
+                <Item>
+                  {" "}
+                  &middot; Comecei a estudar programação com 13 anos mas parei até
+                  voltar aos 17
+                </Item>
               </List>
             </CardContainer>
           </Container>

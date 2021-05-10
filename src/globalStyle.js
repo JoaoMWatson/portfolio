@@ -9,8 +9,8 @@ const fontSize = {
     primary: '3.5rem',
     secondary: '2.625rem',
   },
-  primary: '2.5rem',
-  secondary:'1.5rem'
+  primary: '2.0rem',
+  secondary:'1.38rem'
 }
 
 const breakpoints = {
