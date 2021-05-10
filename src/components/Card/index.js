@@ -27,25 +27,26 @@ function Card() {
     <>
       <NavBar>
         <NavItem
-          onClick={() => setSelect([true, false, false, false])}
+          onClick={() => {setSelect([true, false, false, false]); slider.slickGoTo(0)}}
           isSelect={select[0]}
+          slick
         >
           Sobre
         </NavItem>
         <NavItem
-          onClick={() => setSelect([false, true, false, false])}
+          onClick={() => {setSelect([false, true, false, false]); slider.slickGoTo(1)}}
           isSelect={select[1]}
         >
           Conhecimentos
         </NavItem>
         <NavItem
-          onClick={() => setSelect([false, false, true, false])}
+          onClick={() => {setSelect([false, false, true, false]); slider.slickGoTo(2)}}
           isSelect={select[2]}
         >
           Experiencias
         </NavItem>
         <NavItem
-          onClick={() => setSelect([false, false, false, true])}
+          onClick={() => {setSelect([false, false, false, true]); slider.slickGoTo(3)}}
           isSelect={select[3]}
         >
           Curiosidades
