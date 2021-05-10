@@ -1,7 +1,7 @@
 {
-  "homepage": "http://JoaoMWatson.github.io/portifolio",
+  "homepage": "http://JoaoMWatson.github.io/portfolio",
   "name": "portifolio",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
