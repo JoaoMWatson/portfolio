@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import {
   CardContainer,
@@ -19,7 +19,7 @@ function Card() {
   const [indexSlider, setIndexSlider] = useState(0);
 
   const after = (index) => {
-    if (isNaN(index)) {
+    if (isNaN(index) || index === undefined) {
       index = 1;
     }
     if (index === 4) {
@@ -65,11 +65,12 @@ function Card() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    afterChange: () => after(indexSlider.slideIndex + 1),
+    afterChange: () => after(indexSlider),
     beforeChange: (current, next) => {
-      setIndexSlider({ slideIndex: next });
+      setIndexSlider(next);
     },
   };
+
 
   return (
     <>
@@ -82,7 +83,7 @@ function Card() {
             setCuriosidade(false);
             slider.slickGoTo(0);
           }}
-          isSelect={sobre}
+          isSelect={indexSlider === 0 ? true: false}
         >
           Sobre
         </NavItem>
@@ -94,7 +95,9 @@ function Card() {
             setCuriosidade(false);
             slider.slickGoTo(1);
           }}
-          isSelect={conhecimento}
+          value={indexSlider}
+          isSelect={indexSlider === 1 ? true: false}
+
         >
           Conhecimentos
         </NavItem>
@@ -106,7 +109,8 @@ function Card() {
             setCuriosidade(false);
             slider.slickGoTo(2);
           }}
-          isSelect={experiencia}
+          isSelect={indexSlider === 2 ? true: false}
+
         >
           Experiências
         </NavItem>
@@ -119,7 +123,8 @@ function Card() {
 
             slider.slickGoTo(3);
           }}
-          isSelect={curiosidade}
+          isSelect={indexSlider === 3 ? true: false}
+
         >
           Curiosidades
         </NavItem>

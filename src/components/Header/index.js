@@ -5,8 +5,8 @@ export default function Header() {
   return(
     <Container>
       <Wrapper>
-        <Title primary>Hi, i am João Pedro Watson</Title>
-        <Title>Backend developer</Title>
+        <Title primary>Prazer, João Pedro Watson </Title>
+        <Title>Desenvolvedor Backend</Title>
       </Wrapper>
     </Container>
   )
