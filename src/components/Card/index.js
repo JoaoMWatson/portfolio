@@ -71,7 +71,6 @@ function Card() {
     },
   };
 
-
   return (
     <>
       <NavBar>
@@ -83,7 +82,7 @@ function Card() {
             setCuriosidade(false);
             slider.slickGoTo(0);
           }}
-          isSelect={indexSlider === 0 ? true: false}
+          isSelect={indexSlider === 0 ? true : false}
         >
           Sobre
         </NavItem>
@@ -96,8 +95,7 @@ function Card() {
             slider.slickGoTo(1);
           }}
           value={indexSlider}
-          isSelect={indexSlider === 1 ? true: false}
-
+          isSelect={indexSlider === 1 ? true : false}
         >
           Conhecimentos
         </NavItem>
@@ -109,8 +107,7 @@ function Card() {
             setCuriosidade(false);
             slider.slickGoTo(2);
           }}
-          isSelect={indexSlider === 2 ? true: false}
-
+          isSelect={indexSlider === 2 ? true : false}
         >
           Experiências
         </NavItem>
@@ -123,8 +120,7 @@ function Card() {
 
             slider.slickGoTo(3);
           }}
-          isSelect={indexSlider === 3 ? true: false}
-
+          isSelect={indexSlider === 3 ? true : false}
         >
           Curiosidades
         </NavItem>
@@ -133,7 +129,7 @@ function Card() {
         <li>
           <Container>
             <CardContainer>
-              <Title>Sobre </Title>
+              {/* <Title>Sobre </Title> */}
               <List>
                 <Item as="p">
                   Formado em Desenvolvimento de Sistemas pela ETEC Irmã
@@ -151,7 +147,7 @@ function Card() {
         <li>
           <Container>
             <CardContainer>
-              <Title>Conhecimentos</Title>
+              {/* <Title>Conhecimentos</Title> */}
               <List>
                 <Item>
                   <b>Backend:</b>
@@ -187,7 +183,7 @@ function Card() {
         <li>
           <Container>
             <CardContainer>
-              <Title>Experiências</Title>
+              {/* <Title>Experiências</Title> */}
               <List>
                 <Item>
                   <b>Desenvolvedor Fullstack na Fiscosys</b>
@@ -224,7 +220,7 @@ function Card() {
         <li>
           <Container>
             <CardContainer>
-              <Title>Curiosidades</Title>
+              {/* <Title>Curiosidades</Title> */}
               <List>
                 <Item>
                   {" "}

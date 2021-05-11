@@ -19,6 +19,7 @@ const CardContainer = styled.div`
   border-radius: 10px;
   padding: 2%;
   overflow-y: auto;
+  text-align:justify;
 
   ::-webkit-scrollbar {
     width: 5px;
